@@ -14,8 +14,9 @@
 <div class="content">
 
 <div class="author">Author: Ellen Price</div>
+<div class="author">Edited in 2016 by Tim Menninger</div>
 <h1>CS2 Assignment 3: Data Structures</h1>
-<h2>Due Tuesday, January 27, 2015, at 17:00 PST</h2>
+<h2>Due Tuesday, January 26, 2016, at 17:00 PST</h2>
 
 <hr />
 
@@ -137,10 +138,11 @@ functionality you will need.</div>
 <p></p>
 
 <div class="hint">Write all of your source code in the provided files,
-leaving the file structure intact. You submission should be your base
+leaving the file structure intact. Your submission should be your base
 directory, zipped, with all source files included. You do not need to
-include binaries or object files. As always, be sure that the code
-you submit compiles! Makefile targets have been provided for you.</div>
+include binaries or object files. To quickly remove binaries and object
+files, run <span class="code">make clean</span> using the supplied
+Makefile target. As always, be sure that the code you submit compiles!</div>
 
 <h3>Part 0: Debugging with binary search trees</h3>
 
@@ -225,7 +227,15 @@ objects onto your stack. You should also demonstrate that you can
 attempt to pop an item off an empty stack without causing a
 segmentation fault, etc. Compile with
 <span class="code">make testsuite</span>, and run with
-<span class="code">bin/testsuite</span>.</p>
+<span class="code">bin/testsuite</span>.
+Make sure in addition to printing values from your test, you print
+brief descriptions of each value! Printing <span class="code">1 2</span>
+is very hard to understand and is thus meaningless. Instead, print
+something descriptive so the user can easily see whether the test
+was passed.  For example, print
+<span class="code">Popping Coordinate (1, 2). Popped value: 1 2</span>, where
+the "(1, 2)" reports what you expect and the "popped value"
+is what was actually popped.</p>
 
 <div class="hint">Do not attempt to solve the maze with depth-first
 search until you are sure your stack implementation works the way
@@ -367,7 +377,9 @@ procedure, you must also implement the member function
 the maze. The renderer will call this function after push and pop operations
 to update the display and show you the current state. You may want to add
 another function to the stack class to help you; remember that, for DFS,
-the entire path is contained on the stack.</p>
+the entire path is contained on the stack. Your implementation of this
+function should not call or rely on <span class="code">push()</span> or
+<span class="code">pop()</span> functions.</p>
 
 <h4>1.4 Breadth-first search algorithm</h4>
 
@@ -431,7 +443,9 @@ the maze. The renderer will call this function after enqueue operations
 to update the display and show you the current state. This time, you
 have all the information you need stored in the
 <span class="code">visited</span> member array and should not require a
-helper function in your queue class.</p>
+helper function in your queue class. Again, it would be in your best
+interest to avoid using <span class="code">enqueue()</span> and
+<span class="code">dequeue()</span> functions.</p>
 
 <h4>1.5 Analysis</h4>
 
