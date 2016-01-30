@@ -112,7 +112,7 @@ struct rect
      */
     coordinate *ul;
     /**
-     * @brief The coordinate of the bottom left corner of the rectangle
+     * @brief The coordinate of the bottom right corner of the rectangle
      */
     coordinate *br;
 
@@ -120,7 +120,7 @@ struct rect
      * @brief Constructor for the rect struct
      *
      * @param ul: The upper left corner
-     * @param br: The upper right corner
+     * @param br: The bottom right corner
      */
     rect(coordinate *ul, coordinate *br)
     {
