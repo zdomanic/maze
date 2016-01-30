@@ -6,15 +6,15 @@
  * @copyright see License section
  *
  * @brief Functions for main application class.
- * 
+ *
  * @section License
  * Copyright (c) 2013-2014 California Institute of Technology.
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
  * met:
- * 
+ *
  * * Redistributions of source code must retain the above copyright
  *   notice, this list of conditions and the following disclaimer.
  * * Redistributions in binary form must reproduce the above
@@ -24,7 +24,7 @@
  * * Neither the name of the  nor the names of its
  *   contributors may be used to endorse or promote products derived from
  *   this software without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -38,9 +38,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * The views and conclusions contained in the software and documentation are those
- * of the authors and should not be interpreted as representing official policies, 
+ * of the authors and should not be interpreted as representing official policies,
  * either expressed or implied, of the California Institute of Technology.
- * 
+ *
  */
 
 #include "QuadtreeVisualizerApp.h"
@@ -57,7 +57,7 @@ QuadtreeVisualizerApp::QuadtreeVisualizerApp()
 
     srand(time(NULL));
     qtree = NULL;
-    
+
     Initialize();
 }
 
@@ -68,7 +68,7 @@ QuadtreeVisualizerApp::~QuadtreeVisualizerApp()
 {
     if (qtree)
         delete qtree;
-} 
+}
 
 
 /**
@@ -79,14 +79,14 @@ QuadtreeVisualizerApp::~QuadtreeVisualizerApp()
 int QuadtreeVisualizerApp::OnExecute()
 {
     SDL_Event Event;
-    
+
     if(OnInit() == false)
     {
         return -1;
     }
 
     OnRender(NULL);
- 
+
     while (running)
     {
         while(SDL_PollEvent(&Event))
@@ -94,9 +94,9 @@ int QuadtreeVisualizerApp::OnExecute()
             OnEvent(&Event);
         }
     }
- 
+
     OnCleanup();
- 
+
     return 0;
 }
 
@@ -113,16 +113,16 @@ bool QuadtreeVisualizerApp::OnInit()
     {
         return false;
     }
- 
-    if((surf = SDL_SetVideoMode(SCREENSIZE, SCREENSIZE, 32, 
+
+    if((surf = SDL_SetVideoMode(SCREENSIZE, SCREENSIZE, 32,
     SDL_HWSURFACE | SDL_DOUBLEBUF)) == NULL)
     {
         return false;
     }
-    
+
     /* This is necessary to receive Unicode keycodes. */
     SDL_EnableUNICODE(1);
- 
+
     return true;
 }
 
@@ -219,7 +219,7 @@ void QuadtreeVisualizerApp::OnRender(coordinate *query_point)
     for (unsigned int i = 0; i < points.size(); i++)
     {
         bool highlight = false;
-        
+
         for (unsigned int j = 0; j < points_to_highlight.size(); j++)
         {
             if (points[i] == points_to_highlight[j])
@@ -242,7 +242,7 @@ void QuadtreeVisualizerApp::OnRender(coordinate *query_point)
             (query_point->x + QUERY_RADIUS) * SCREENSIZE,
             (query_point->y + QUERY_RADIUS) * SCREENSIZE, 255, 128, 0, 255);
     }
-        
+
     SDL_Flip(surf);
 
     if (query_point)
@@ -269,7 +269,7 @@ void QuadtreeVisualizerApp::Initialize()
 {
     if (qtree)
         delete qtree;
-    
+
     qtree = new Quadtree(1.);
     AddOne();
 }
@@ -293,6 +293,6 @@ void QuadtreeVisualizerApp::AddOne()
  */
 int main(int argc, char* argv[])
 {
-    QuadtreeVisualizerApp app; 
+    QuadtreeVisualizerApp app;
     return app.OnExecute();
 }

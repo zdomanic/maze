@@ -46,8 +46,8 @@
 #ifndef __BREADTHFIRSTSOLVER_H__
 #define __BREADTHFIRSTSOLVER_H__
 
-#include <cstdio>
 #include <vector>
+#include <iostream>
 #include "MazeSolverBase.hpp"
 #include "CoordinateQueue.hpp"
 

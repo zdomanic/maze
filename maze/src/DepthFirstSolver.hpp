@@ -46,8 +46,8 @@
 #ifndef __DEPTHFIRSTSOLVER_H__
 #define __DEPTHFIRSTSOLVER_H__
 
-#include <cstdio>
 #include <vector>
+#include <iostream>
 #include "MazeSolverBase.hpp"
 #include "CoordinateStack.hpp"
 
