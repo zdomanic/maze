@@ -48,7 +48,7 @@
 
 #include <SDL.h>
 #include <SDL_gfxPrimitives.h>
-#include <cstdio>
+#include <iostream>
 #include "RecursiveBacktracker.hpp"
 #include "MazeGrid.hpp"
 #include "MazeSolverBase.hpp"

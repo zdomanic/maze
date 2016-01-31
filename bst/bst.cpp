@@ -1,8 +1,10 @@
-#include <stdio.h>
+#include <iostream>
 #include <stdlib.h>
 
 #define TEST_SIZE 10
 #define TEST_SPACE 50
+
+using namespace std;
 
 struct Node
 {
@@ -15,13 +17,13 @@ struct Node
         left = NULL;
         right = NULL;
     }
-    
+
     /** @brief Inserts an integer into the subtree rooted at this node.
-    
+
     Does not allow duplicate entries.
-    
+
     @return whether or not the entry was successfully inserted.
-    
+
     */
     bool insert(int val)
     {
@@ -54,11 +56,11 @@ struct Node
             }
         }
     }
-    
+
     /** @brief Finds an integer in the subtree rooted at this node.
-    
+
     @return whether or not the entry exists in this subtree.
-    
+
     */
     bool find(int val)
     {
@@ -101,23 +103,23 @@ public:
     {
         root = NULL;
     }
-    
+
     /** @brief Inserts an integer into this tree.
-    
+
     Does not allow duplicate entries.
-    
+
     @return whether or not the entry was successfully inserted.
-    
+
     */
     bool insert(int val)
     {
         return root->insert(val);
     }
-    
+
      /** @brief Finds an integer in this tree.
-    
+
     @return whether or not the entry exists in this tree.
-    
+
     */
     bool find(int val)
     {
@@ -129,35 +131,37 @@ int main(int argc, char ** argv)
 {
     BinarySearchTree b;
     srand(42);
-    
+
     // first insert some test numbers
-    printf("\n\nadding %d numbers\n\n", TEST_SIZE);
+    cout << endl << endl
+         << "adding " << TEST_SIZE << " numbers" << endl << endl;
     for(int i = 0; i < TEST_SIZE; i++)
     {
         int k = rand() % TEST_SPACE;
-        printf("Inserting %d... ", k);
+        cout << "Inserting " << k << "... ";
         bool s = b.insert(k);
         if(s)
         {
-            printf("OK\n");
+            cout << "OK" << endl;
         }
         else
         {
-            printf("already in\n");
+            cout << "already in" << endl;
         }
     }
-    
+
     // now print out all the numbers in the tree
     // (by finding all possible numbers, not by traversing the tree)
-    printf("\n\nok, now printing contents (the slow way)\n\n");
+    cout << endl << endl
+         << "ok, now printing contents (the slow way)" << endl << endl;
     for(int j = 0; j < TEST_SPACE; j++)
     {
         if(b.find(j))
         {
-            printf("%d ", j);
+            cout << j;
         }
     }
-    
-    printf("\n\nall done\n\n");
+
+    cout << endl << endl << "all done" << endl << endl;
     return 0;
 }

@@ -6,15 +6,15 @@
  * @copyright see License section
  *
  * @brief Common structures for use by quadtrees.
- * 
+ *
  * @section License
  * Copyright (c) 2013-2014 California Institute of Technology.
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
  * met:
- * 
+ *
  * * Redistributions of source code must retain the above copyright
  *   notice, this list of conditions and the following disclaimer.
  * * Redistributions in binary form must reproduce the above
@@ -24,7 +24,7 @@
  * * Neither the name of the  nor the names of its
  *   contributors may be used to endorse or promote products derived from
  *   this software without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -38,9 +38,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * The views and conclusions contained in the software and documentation are those
- * of the authors and should not be interpreted as representing official policies, 
+ * of the authors and should not be interpreted as representing official policies,
  * either expressed or implied, of the California Institute of Technology.
- * 
+ *
  */
 
 #ifndef __STRUCTS_H__
@@ -101,7 +101,7 @@ struct coordinate
 
 /**
  * @brief Struct for representing a rectangle in the 2-D plane.
- * 
+ *
  * The representation uses the coordinates of the upper left corner
  * and the coordinate of the bottom right corner.
  */
@@ -155,7 +155,7 @@ struct rect
 };
 
 /**
- * @brief Struct for containing information regarding points and 
+ * @brief Struct for containing information regarding points and
  *        rectangles that intersect a given square region
  */
 struct query

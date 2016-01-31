@@ -47,7 +47,7 @@
 #define __RECURSIVEBACKTRACKER_H__
 
 #include <cstdlib>
-#include <cstdio>
+#include <iostream>
 #include <ctime>
 #include "MazeGrid.hpp"
 #include "common.hpp"

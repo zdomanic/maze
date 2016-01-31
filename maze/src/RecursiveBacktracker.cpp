@@ -73,24 +73,24 @@ void RecursiveBacktracker::ascii_print()
 
     for (x = 0; x < WIDTH * 2; x++)
     {
-        printf("_");
+        cout << "_";
     }
 
-    printf("\n");
+    cout << endl;
 
     for (y = 0; y < HEIGHT; y++)
     {
-        printf("|");
+        cout << "|";
 
         for (x = 0; x < WIDTH; x++)
         {
             if ((maze->grid[x][y] & S) != 0)
             {
-                printf(" ");
+                cout << " ";
             }
             else
             {
-                printf("_");
+                cout << "_";
             }
 
             if ((maze->grid[x][y] & E) != 0)
@@ -98,20 +98,20 @@ void RecursiveBacktracker::ascii_print()
                 if (((maze->grid[x][y] |
                     maze->grid[x+1][y]) & S) != 0)
                 {
-                    printf(" ");
+                    cout << " ";
                 }
                 else
                 {
-                    printf("_");
+                    cout << "_";
                 }
             }
             else
             {
-                printf("|");
+                cout << "|";
             }
         }
 
-        printf("\n");
+        cout << endl;
     }
 }
 
