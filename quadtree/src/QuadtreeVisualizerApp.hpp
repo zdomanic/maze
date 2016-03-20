@@ -1,5 +1,5 @@
 /**
- * @file QuadtreeVisualizerApp.h
+ * @file QuadtreeVisualizerApp.hpp
  * @author Ellen Price <<eprice@caltech.edu>>
  * @version 1.0
  * @date 2013-2014
@@ -50,8 +50,8 @@
 #include <SDL_gfxPrimitives.h>
 #include <time.h>
 #include <stdio.h>
-#include "structs.h"
-#include "Quadtree.h"
+#include "structs.hpp"
+#include "Quadtree.hpp"
 
 /**
  * @brief The size of the screen

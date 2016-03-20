@@ -14,16 +14,16 @@ OBJS = $(OBJDIR)/Quadtree.o $(OBJDIR)/QuadtreeNode.o \
 quadtree: $(OBJS)
 	$(CC) $(OBJS) $(LIBS) -o $(BINDIR)/quadtree
 
-$(OBJDIR)/Quadtree.o: $(SRCDIR)/Quadtree.cpp $(SRCDIR)/Quadtree.h \
-	$(SRCDIR)/QuadtreeNode.cpp $(SRCDIR)/structs.h
+$(OBJDIR)/Quadtree.o: $(SRCDIR)/Quadtree.cpp $(SRCDIR)/Quadtree.hpp \
+	$(SRCDIR)/QuadtreeNode.cpp $(SRCDIR)/structs.hpp
 	$(CC) $(CFLAGS) -c $(SRCDIR)/Quadtree.cpp -o $(OBJDIR)/Quadtree.o
 
 $(OBJDIR)/QuadtreeNode.o: $(SRCDIR)/QuadtreeNode.cpp $(SRCDIR)/QuadtreeNode.cpp \
-	$(SRCDIR)/structs.h
+	$(SRCDIR)/structs.hpp
 	$(CC) $(CFLAGS) -c $(SRCDIR)/QuadtreeNode.cpp -o $(OBJDIR)/QuadtreeNode.o
 
 $(OBJDIR)/QuadtreeVisualizerApp.o: $(SRCDIR)/QuadtreeVisualizerApp.cpp \
-	$(SRCDIR)/QuadtreeVisualizerApp.h $(SRCDIR)/Quadtree.h $(SRCDIR)/structs.h
+	$(SRCDIR)/QuadtreeVisualizerApp.hpp $(SRCDIR)/Quadtree.hpp $(SRCDIR)/structs.hpp
 	$(CC) $(CFLAGS) -c $(SRCDIR)/QuadtreeVisualizerApp.cpp -o $(OBJDIR)/QuadtreeVisualizerApp.o
 
 docs:

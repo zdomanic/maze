@@ -1,11 +1,11 @@
 /**
- * @file Quadtree.h
+ * @file QuadtreeNode.hpp
  * @author Ellen Price <<eprice@caltech.edu>>
  * @version 1.0
  * @date 2013-2014
  * @copyright see License section
  *
- * @brief Definitions for a quadtree.
+ * @brief Definitions for a quadtree node.
  *
  * @section License
  * Copyright (c) 2013-2014 California Institute of Technology.
@@ -43,33 +43,33 @@
  *
  */
 
-#ifndef __QUADTREE_H__
-#define __QUADTREE_H__
+#ifndef __QUADTREENODE_H__
+#define __QUADTREENODE_H__
 
 #include <vector>
 #include <stdlib.h>
-#include "QuadtreeNode.h"
-#include "structs.h"
+#include "structs.hpp"
 
 using namespace std;
 
 /**
- * @brief A class encapsulating a simple quadtree.
+ * @brief A class encapsulating a simple quadtree node.
  */
-class Quadtree
+class QuadtreeNode
 {
 public:
-    Quadtree(float worldsize);
-    ~Quadtree();
+    QuadtreeNode(float size, coordinate *ul);
+    ~QuadtreeNode();
 
+    rect *NodeRect();
     void Insert(coordinate *c);
     vector<rect*> ListRectangles();
     vector<coordinate*> ListPoints();
     query *Query(coordinate *center, float radius);
 
 private:
-    float worldsize;
-    QuadtreeNode *root;
+    float size;
+    rect *box;
 };
 
 #endif

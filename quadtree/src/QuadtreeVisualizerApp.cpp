@@ -43,7 +43,7 @@
  *
  */
 
-#include "QuadtreeVisualizerApp.h"
+#include "QuadtreeVisualizerApp.hpp"
 
 
 /**

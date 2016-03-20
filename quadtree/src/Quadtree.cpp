@@ -43,7 +43,7 @@
  *
  */
 
-#include "Quadtree.h"
+#include "Quadtree.hpp"
 
 
 /**

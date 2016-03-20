@@ -1,5 +1,5 @@
 /**
- * @file structs.h
+ * @file structs.hpp
  * @author Ellen Price <<eprice@caltech.edu>>
  * @version 1.0
  * @date 2013-2014
