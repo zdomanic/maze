@@ -9,7 +9,7 @@ CC = g++
 LD = g++
 DOCGEN = doxygen
 CFLAGS =
-CPPFLAGS = -std=c++0x -I$(SRCDIR) -ggdb `sdl-config --cflags`
+CPPFLAGS = -std=c++0x -I$(SRCDIR) -ggdb -Wall -pedantic `sdl-config --cflags`
 LDFLAGS = `sdl-config --libs` -lSDL_gfx
 DOCGENFLAGS =
 COMMON_SRCS = CoordinateQueue.cpp CoordinateStack.cpp
