@@ -51,7 +51,7 @@
 MazeSolverApp::MazeSolverApp()
 {
     /* Do SDL initialization. */
-    surf = NULL;
+    surf = nullptr;
     running = true;
 
     /* Do maze content initialization. */
@@ -60,7 +60,7 @@ MazeSolverApp::MazeSolverApp()
     maze = rb->get_maze();
 
     /* Initialize private fields. */
-    solver = NULL;
+    solver = nullptr;
 }
 
 /**
@@ -117,7 +117,7 @@ bool MazeSolverApp::OnInit()
     }
 
     if((surf = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32,
-    SDL_HWSURFACE | SDL_DOUBLEBUF)) == NULL)
+    SDL_HWSURFACE | SDL_DOUBLEBUF)) == nullptr)
     {
         return false;
     }
@@ -147,7 +147,7 @@ void MazeSolverApp::OnEvent(SDL_Event* event)
             if (solver)
             {
                 delete solver;
-                solver = NULL;
+                solver = nullptr;
             }
 
             solver = (MazeSolverBase *) new DepthFirstSolver(this);
@@ -160,7 +160,7 @@ void MazeSolverApp::OnEvent(SDL_Event* event)
             if (solver)
             {
                 delete solver;
-                solver = NULL;
+                solver = nullptr;
             }
 
             solver = (MazeSolverBase *) new BreadthFirstSolver(this);
@@ -173,7 +173,7 @@ void MazeSolverApp::OnEvent(SDL_Event* event)
             if (solver)
             {
                 delete solver;
-                solver = NULL;
+                solver = nullptr;
             }
 
             rb->create_maze();
@@ -192,7 +192,7 @@ void MazeSolverApp::OnEvent(SDL_Event* event)
  */
 void MazeSolverApp::OnRender()
 {
-    SDL_FillRect(surf, NULL, SDL_MapRGB(surf->format, 0, 0, 0));
+    SDL_FillRect(surf, nullptr, SDL_MapRGB(surf->format, 0, 0, 0));
     draw_maze();
     draw_path();
     SDL_Flip(surf);

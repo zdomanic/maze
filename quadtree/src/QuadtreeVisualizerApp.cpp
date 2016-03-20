@@ -52,11 +52,11 @@
 QuadtreeVisualizerApp::QuadtreeVisualizerApp()
 {
     /* Do SDL initialization. */
-    surf = NULL;
+    surf = nullptr;
     running = true;
 
-    srand(time(NULL));
-    qtree = NULL;
+    srand(time(nullptr));
+    qtree = nullptr;
 
     Initialize();
 }
@@ -85,7 +85,7 @@ int QuadtreeVisualizerApp::OnExecute()
         return -1;
     }
 
-    OnRender(NULL);
+    OnRender(nullptr);
 
     while (running)
     {
@@ -115,7 +115,7 @@ bool QuadtreeVisualizerApp::OnInit()
     }
 
     if((surf = SDL_SetVideoMode(SCREENSIZE, SCREENSIZE, 32,
-    SDL_HWSURFACE | SDL_DOUBLEBUF)) == NULL)
+    SDL_HWSURFACE | SDL_DOUBLEBUF)) == nullptr)
     {
         return false;
     }
@@ -144,13 +144,13 @@ void QuadtreeVisualizerApp::OnEvent(SDL_Event* event)
         {
             /* Reset the display. */
             Initialize();
-            OnRender(NULL);
+            OnRender(nullptr);
         }
         else if (event->key.keysym.unicode == 'a')
         {
             /* Add 50 points to the tree. */
             AddOne();
-            OnRender(NULL);
+            OnRender(nullptr);
         }
         else if (event->key.keysym.unicode == 'q')
         {
@@ -175,9 +175,9 @@ void QuadtreeVisualizerApp::OnRender(coordinate *query_point)
 {
     vector<rect*> boxes_to_highlight;
     vector<coordinate*> points_to_highlight;
-    query *q = NULL;
+    query *q = nullptr;
 
-    if (query_point != NULL)
+    if (query_point != nullptr)
     {
         q = qtree->Query(query_point, QUERY_RADIUS);
         boxes_to_highlight = q->boxes;
@@ -187,7 +187,7 @@ void QuadtreeVisualizerApp::OnRender(coordinate *query_point)
     vector<rect*> boxes = qtree->ListRectangles();
     vector<coordinate*> points = qtree->ListPoints();
 
-    SDL_FillRect(surf, NULL, SDL_MapRGB(surf->format, 255, 255, 255));
+    SDL_FillRect(surf, nullptr, SDL_MapRGB(surf->format, 255, 255, 255));
 
     /* Draw all rectangles. */
     for (unsigned int i = 0; i < boxes.size(); i++)
@@ -235,7 +235,7 @@ void QuadtreeVisualizerApp::OnRender(coordinate *query_point)
                 points[i]->y * SCREENSIZE, POINTSIZE, 0, 0, 255, 255);
     }
 
-    if (query_point != NULL)
+    if (query_point != nullptr)
     {
         rectangleRGBA(surf, (query_point->x - QUERY_RADIUS) * SCREENSIZE,
             (query_point->y - QUERY_RADIUS) * SCREENSIZE,

@@ -14,8 +14,8 @@ struct Node
     Node(int v)
     {
         value = v;
-        left = NULL;
-        right = NULL;
+        left = nullptr;
+        right = nullptr;
     }
 
     /** @brief Inserts an integer into the subtree rooted at this node.
@@ -33,7 +33,7 @@ struct Node
         }
         else if(val < value)
         {
-            if(left == NULL)
+            if(left == nullptr)
             {
                 left = new Node(val);
                 return true;
@@ -45,7 +45,7 @@ struct Node
         }
         else
         {
-            if(right == NULL)
+            if(right == nullptr)
             {
                 right = new Node(val);
                 return true;
@@ -70,7 +70,7 @@ struct Node
         }
         else if(val < value)
         {
-            if(left == NULL)
+            if(left == nullptr)
             {
                 left = new Node(val);
                 return false;
@@ -82,7 +82,7 @@ struct Node
         }
         else
         {
-            if(right == NULL)
+            if(right == nullptr)
             {
                 return false;
             }
@@ -101,7 +101,7 @@ private:
 public:
     BinarySearchTree()
     {
-        root = NULL;
+        root = nullptr;
     }
 
     /** @brief Inserts an integer into this tree.

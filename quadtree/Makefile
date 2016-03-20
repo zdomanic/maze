@@ -1,6 +1,6 @@
 CC = g++
 DOCSGEN = doxygen
-CFLAGS = -Wall -ansi -pedantic -ggdb `sdl-config --cflags`
+CFLAGS = -std=c++11 -Wall -pedantic -ggdb `sdl-config --cflags`
 LIBS = `sdl-config --libs` -lSDL_gfx
 SRCDIR = src
 OBJDIR = obj
