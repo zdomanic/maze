@@ -141,7 +141,7 @@
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=cpp"></script>
 <div class="content">
 
-<div class="author">Author: Ellen Price<br>Edited in 2016 by Tim Menninger</div>
+<div class="author">Author: Ellen Price</div>
 <h1>CS2 Assignment 3: Data Structures</h1>
 <h2>Due Tuesday, January 26, 2016, at 17:00 PST</h2>
 
@@ -467,19 +467,21 @@ returns an integer that is some bitwise OR-d combination of four constants:
 <span class="code">N</span>, <span class="code">S</span>,
 <span class="code">E</span>, and <span class="code">W</span> (representing
 the directions north, south, east, and west, respectively). Below is
-an example of testing if east is a valid move from the position (1, 2).</p>
+an example of testing if east or south are valid moves from the position (1, 2).</p>
 
 <pre class="prettyprint code">
 res = maze->get_possible_moves(1, 2);
 
-if (res & E)
-{
-	/* We can move east from (1, 2). */
+if (res & E) {
+	/* We can move east from (1, 2) to (2, 2). */
 	do_something();
 }
-else
-{
-	/* We cannot move east from (1, 2). */
+else if (res & S) {
+	/* We can move south from (1, 2) to (1, 3). */
+	do_something();
+}
+else {
+	/* We cannot move east or south from (1, 2). */
 	do_something_else();
 }
 </pre>
