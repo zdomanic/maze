@@ -337,7 +337,9 @@ reference to the next item.</p>
 	<li><b><span class="code">do_pop</span>:</b> This function takes
         no arguments; it should remove the top
         <span class="code">Coordinate</span> from the stack and return
-        it.</li>
+        it. You may choose to have <span class="code">do_pop</span> segfault,
+        return a dummy value such as (-1, -1), or throw an exception if it is
+        called when the stack is empty, but be sure to document this behavior.</li>
 	<li><b><span class="code">peek</span>:</b> This function takes no
         arguments and returns the top <span class="code">Coordinate</span>
 		<i>without removing it</i>.</li>
@@ -350,9 +352,7 @@ reference to the next item.</p>
 <p><div class="points easy">1</div>Write a simple test sequence in
 <span class="code">maze/src/testsuite.cpp</span> to demonstrate that
 you can successfully push and pop <span class="code">Coordinate</span>
-objects onto your stack. You should also demonstrate that you can
-attempt to pop an item off an empty stack without causing a
-segmentation fault, etc. Compile with
+objects onto your stack, etc. Compile with
 <span class="code">make testsuite</span>, and run with
 <span class="code">bin/testsuite</span>.
 Make sure in addition to printing values from your test, you print
@@ -395,7 +395,10 @@ front of the queue.</p>
 	<li><b><span class="code">do_dequeue</span>:</b> This function takes
         no arguments; it should remove the front
         <span class="code">Coordinate</span> from the queue
-		and return it.</li>
+        and return it. You may choose to have <span class="code">do_dequeue</span>
+        segfault, return a dummy value such as (-1, -1), or throw an exception
+        if it is called when the queue is empty, but be sure to document this
+        behavior.</li>
 	<li><b><span class="code">peek</span>:</b> This function takes no
         arguments and returns the front <span class="code">Coordinate</span>
         in the queue <i>without removing it</i>.</li>
@@ -408,9 +411,7 @@ front of the queue.</p>
 <p><div class="points easy">1</div>Continue your test sequence in
 <span class="code">maze/src/testsuite.cpp</span> to demonstrate that
 you can successfully enqueue and dequeue <span class="code">Coordinate</span>
-objects into your queue. You should also demonstrate that you can
-attempt to dequeue an item from an empty queue without causing a
-segmentation fault, etc. Compile with
+objects into your queue, etc. Compile with
 <span class="code">make testsuite</span>, and run with
 <span class="code">bin/testsuite</span>.</p>
 
