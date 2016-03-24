@@ -44,6 +44,7 @@
  */
 
 #include "MazeSolverApp.hpp"
+#include <signal.h>
 
 /**
  * @brief Initializes the application class.
@@ -341,10 +342,20 @@ void MazeSolverApp::draw_path()
 }
 
 /**
+ * Exit the program when the user presses control-C.
+ * Without this, control-C does not kill the program while the maze is being
+ * solved.
+ */
+void sigint_handler(int param) {
+    exit(0);
+}
+
+/**
  * @breif Spawns the application class.
  */
 int main(int argc, char* argv[])
 {
+    signal(SIGINT, sigint_handler);
     MazeSolverApp app;
     return app.OnExecute();
 }
